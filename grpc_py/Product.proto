@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package service;
+option go_package = "./server";
+
+message ProductRequest{
+  int32 ProdId = 1; // 1代表顺序
+}
+
+message ProductResponse{
+  int32 ProdStock = 1; // 1代表顺序
+}
+
+service ProdService{
+  // 定义方法
+  rpc GetProductStock(ProductRequest) returns(ProductResponse);
+}
