@@ -13,6 +13,7 @@ import (
 
 func main() {
 	s := grpc.NewServer()
+	defer s.GracefulStop()
 	pb.RegisterProdServiceServer(s, new(service.ProdService))
 
 	listen, err := net.Listen("tcp", "127.0.0.1:8082")
