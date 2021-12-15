@@ -9,3 +9,6 @@ golang
 py
 - 安装grpcio-tools， pip install grpcio-tools
 - 编译proto文件 python -m grpc_tools.protoc -I . --python_out=. --grpc_python_out=. Product.proto
+
+跨语言调用需要注意的地方
+- proto文件中的变量名建议一律使用驼峰，如果使用下划线可能会有跨语言调不通的现象
